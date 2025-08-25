@@ -1,6 +1,6 @@
 import streamlit as st
 import asyncio
-from lib.agent import run_interior_design_agent
+from lib.agent import run_agent
 import tempfile
 
 from dotenv import load_dotenv
@@ -22,9 +22,9 @@ if st.button("Run Agent"):
         st.image(image_file, caption="Uploaded Floorplan", use_container_width=True)
         st.write("Running agent...")
         # Run the agent asynchronously
-        result = asyncio.run(run_interior_design_agent(style, tmp_file_path))
+        result = asyncio.run(run_agent(style, tmp_file_path))
         if result:
-            st.markdown(f"**Response:** {result['text']}")
+            st.markdown(f"**Response:** {result['final_output'].description_of_interior_design}")
             if 'image_paths' in result:
                 for img_path in result['image_paths']:
                     st.image(img_path, caption=img_path, use_container_width=True)

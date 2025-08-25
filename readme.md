@@ -63,6 +63,12 @@ streamlit run app.py
 
 Generated images will be saved in the `output/` directory..
 
+Alternatively you can run the project using:
+
+```bash
+python main.py
+```
+
 ## 💸 Cost Warning
 
 **Important:** This agent does not enforce any budget cap. By default, users will likely incur costs when using external model APIs. Monitor your API usage and set limits with your provider if needed.

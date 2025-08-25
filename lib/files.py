@@ -2,8 +2,6 @@ import base64
 import os
 import subprocess
 import sys
-import tempfile
-from pydantic import BaseModel
 
 def open_file(path: str) -> None:
   if sys.platform.startswith("darwin"):
